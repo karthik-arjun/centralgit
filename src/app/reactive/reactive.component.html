@@ -1,0 +1,40 @@
+<div class="row">
+<div class="col-md-6 offset-md-6 col-md-6">
+    <form [formGroup]='myFormGroup'(ngSubmit)='onSubmit()'>
+    <div class="form-group">
+    <label>Name</label>
+   <input type="text" formControlName='emName' class='form-control' [(ngModel)]='username' name="un">
+    <div  class='error'
+       *ngIf="!myFormGroup.get('emEmail').valid && myFormGroup.get('emName').touched">
+        Enter valid email
+   </div></div>
+    <div class="form-group">
+    <label>Email</label>
+   <input type="email" formControlName='emEmail' class='form-control' [(ngModel)]='useremail' name="ue">
+    <div  class='error'
+     *ngIf="!myFormGroup.get('emEmail').valid && myFormGroup.get('emEmail').touched">
+      Enter valid email
+      </div>
+        </div>
+     <div class="form-group">
+       <label>Mobile</label>
+     <input type="numbers" formControlName='emMobile' class='form-control' [(ngModel)]='usermobile' name="um">
+    
+      <div  class='error'
+     *ngIf="!myFormGroup.get('emMobile').valid && myFormGroup.get('emMobile').touched">
+      Enter valid mobile number
+      </div> </div>
+     <div class="form-group">
+        <label>Salary</label>
+     <input type="numbers" formControlName='emSalary' class='form-control' [(ngModel)]='usersalary' name="us">
+     
+    <div  class='error'
+     *ngIf="!myFormGroup.get('emSalary').valid && myFormGroup.get('emSalary').touched">
+      Enter valid Salary
+      </div></div>
+     <div class="form-group">
+        <input type="submit" class='btn btn-primary btn-block'>
+     </div>
+  </form>
+</div>
+</div>
